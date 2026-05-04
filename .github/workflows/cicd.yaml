@@ -47,8 +47,6 @@ jobs:
 
       - name: Docker push
         run: |
-         - name: Docker push
-        run: |
           docker tag netflix-backend:latest 123456789012.dkr.ecr.us-east-1.amazonaws.com/netflix-backend:${{ github.run_number }}
           docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/netflix-backend:${{ github.run_number }}
    
