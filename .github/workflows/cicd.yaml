@@ -26,10 +26,11 @@ jobs:
         run: ./mvnw clean package -DskipTests
 
       - name: Build Docker image
-        run: echo "${{ vars.ENV_FILE }}" > .env
-        ls -la
-        cat .env
-             #docker build -t netflix-backend .
+        run: |
+          echo "${{ vars.ENV_FILE }}" > .env
+          ls -la
+          cat .env
+          #docker build -t netflix-backend .
 
    
 
