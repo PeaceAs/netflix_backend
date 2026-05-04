@@ -30,7 +30,7 @@ jobs:
           echo "${{ vars.ENV_FILE }}" > .env
           ls -la
           cat .env
-          #docker build -t netflix-backend .
+          docker build -t netflix-backend .
 
    
 
