@@ -18,8 +18,8 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-north-1
-          
+          aws-region: ${{ secrets.AWS_REGION }}
+          aws-account-id: ${{ secrets.AWS_ACCOUNT_ID }} # Add this line for the AWS Account ID
       - name: Log in to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
@@ -47,9 +47,8 @@ jobs:
 
       - name: Docker push
         run: |
-          docker tag netflix-backend:latest 123456789012.dkr.ecr.us-east-1.amazonaws.com/netflix-backend:${{ github.run_number }}
-          docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/netflix-backend:${{ github.run_number }}
-   
+         
+         docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/netflix-backend:${{ github.run_number }}
 
  
  
