@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Docker image
         run: echo "${{ vars.ENV_FILE }}" > .env
-        run: docker build -t netflix-backend .
+             docker build -t netflix-backend .
 
    
 
