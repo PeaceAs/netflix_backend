@@ -30,7 +30,7 @@ jobs:
 
    
 
-  build-and-push 1:
+  build-and-push1:
     runs-on: ubuntu-latest
 
     steps:
@@ -56,7 +56,7 @@ jobs:
 
 
 
-  build-and-push 2:
+  build-and-push2:
     runs-on: ubuntu-latest
 
     steps:
@@ -83,7 +83,7 @@ jobs:
 
 
 
-  build-and-push 3:
+  build-and-push3:
     runs-on: ubuntu-latest
 
     steps:
