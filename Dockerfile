@@ -11,6 +11,7 @@ COPY ./src /app/src
 COPY ./pom.xml /app
 
 RUN mvn -f /app/pom.xml clean package -DskipTests
+RUN ls -al /app/target
 
 COPY ./target/*.jar /app/app.jar
 
