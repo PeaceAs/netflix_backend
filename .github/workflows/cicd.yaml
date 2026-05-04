@@ -27,3 +27,93 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t netflix-backend .
+
+        name: Backend CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push 1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Make mvnw executable
+        run: chmod +x mvnw
+
+      - name: Build backend with Maven
+        run: ./mvnw clean package -DskipTests
+
+      - name: Build Docker image
+        run: docker build -t netflix-backend .
+
+        name: Backend CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push 3:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Make mvnw executable
+        run: chmod +x mvnw
+
+      - name: Build backend with Maven
+        run: ./mvnw clean package -DskipTests
+
+      - name: Build Docker image
+        run: docker build -t netflix-backend .
+
+        name: Backend CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Make mvnw executable
+        run: chmod +x mvnw
+
+      - name: Build backend with Maven
+        run: ./mvnw clean package -DskipTests
+
+      - name: Build Docker image
+        run: docker build -t netflix-backend .
